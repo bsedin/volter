@@ -1,4 +1,10 @@
+require "active_support/per_thread_registry"
+require "active_support/concern"
+
 require "voltrb"
+require "volter/runtime_registry"
+require "volter/core"
+require "volter/database"
+require "volter/settings"
 require "volter/model"
 require "volter/version"
-

@@ -1,15 +1,10 @@
-require 'voltrb'
-
 module Volter
   class Model
 
-    def initialize
-      @db = VoltRb::Client.new
-      #TODO: custom host, port, auth support
-    end
-    
-    def execute_sql(sql)
-      response = @db.invoke("@AdHoc", sql)
+    include Core
+
+    def self.execute_sql(sql)
+      response = connection_handler.invoke("@AdHoc", sql)
       #TODO: move debug data, status codes from response to methods
     end
 
